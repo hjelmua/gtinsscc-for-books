@@ -70,18 +70,18 @@ $pdf->Ln(2);
 
 // ---- MOVE BARCODE TO BOTTOM ----
 //$pdf->SetXY(10, 130);
-$pdf->SetXY(5, 130);
-$pdf->write1DBarcode($product_barcode, 'C128', '', '', 93, 20, 0.65, ['A' => 'A', 'B' => 'B', 'C' => 'C'], 'N');
+$pdf->SetXY(17, 120);
+$pdf->write1DBarcode($product_barcode, 'C128', '', '', 65, 33, 0.65, ['A' => 'A', 'B' => 'B', 'C' => 'C'], 'N');
 $pdf->Ln(2);
-$pdf->SetXY(10, 152);
+$pdf->SetXY(17, 153);
 $pdf->SetFont('helvetica', '', 12);
-$pdf->Cell(90, 5, "(02)" . $article_number . "(37)" . $quantity, 0, 1, 'C');
+$pdf->Cell(65, 5, "(02)" . $article_number . "(37)" . $quantity, 0, 1, 'C');
 
-$pdf->SetXY(5, 160);
-$pdf->write1DBarcode($shipment_barcode, 'C128', '', '', 93, 20, 0.65, ['A' => 'A', 'B' => 'B', 'C' => 'C'], 'N');
+$pdf->SetXY(15, 170);
+$pdf->write1DBarcode($shipment_barcode, 'C128', '', '', 68, 33, 0.65, ['A' => 'A', 'B' => 'B', 'C' => 'C'], 'N');
 $pdf->Ln(2);
-$pdf->SetXY(10, 182);
-$pdf->Cell(80, 5, "(00)" . substr($shipment_barcode, 2), 0, 1, 'C');
+$pdf->SetXY(15, 203);
+$pdf->Cell(68, 5, "(00)" . substr($shipment_barcode, 2), 0, 1, 'C');
 
 // ---- OUTPUT PDF ----
 //$pdf->Output("Label_$article_number.pdf", 'D'); // Force download
